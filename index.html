@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="MyApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +7,20 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="ngApp/css/app.css">
     <title>Document</title>
+    <base href="/">
 </head>
-<body>
+<body ng-controller="Index as index">
+     <li>
+         <ul><a href="/">Home</a></ul>
+     </li>
+
+     {{index.message}} - {{index.serviceMessage}}
+     
+    <div>
+        <ui-view></ui-view>
+    </div>
     
-
-
-
-    
-    <!---scripts------>
+    <!---lib files------>
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-animate/angular-animate.js"></script>
     <script src="node_modules/angular-aria/angular-aria.js"></script>
@@ -24,6 +30,10 @@
     <script src="node_modules/angular-resource/angular-resource.js"></script>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <!---controllers services---->
+    <script src="ngApp/controllers/Index.js"></script>
+    <script src="ngApp/services/MainService.js"></script>
+    <!----modules other------>
     <script src="ngApp/app.js"></script>
 </body>
 </html>
